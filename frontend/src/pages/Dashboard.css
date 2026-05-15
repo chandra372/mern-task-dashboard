@@ -1,0 +1,31 @@
+.dashboard {
+  padding: 2rem;
+  background-color: #f5f5f5;
+  min-height: calc(100vh - 70px);
+}
+
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboard-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 70px);
+  font-size: 1.2rem;
+  color: #7f8c8d;
+}
+
+.dashboard-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 70px);
+  padding: 2rem;
+  background-color: #fadbd8;
+  color: #c0392b;
+  border-radius: 8px;
+  font-size: 1.1rem;
+}
