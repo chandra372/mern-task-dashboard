@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: mern-task-dashboard-backend
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        scope: all
+
+  - type: static
+    name: mern-task-dashboard-frontend
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: frontend/build
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://mern-task-dashboard-backend.onrender.com/api
