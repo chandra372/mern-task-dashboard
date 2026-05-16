@@ -36,7 +36,7 @@ const Dashboard = () => {
   const handleAddTask = async (taskData) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/tasks', {
+      const response = await fetch('/api/tasks', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -55,7 +55,7 @@ const Dashboard = () => {
   const handleDeleteTask = async (taskId) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/tasks/${taskId}`, {
+      const response = await fetch(`/api/tasks?id=${taskId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -72,7 +72,7 @@ const Dashboard = () => {
   const handleUpdateTask = async (taskId, updates) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/tasks/${taskId}`, {
+      const response = await fetch(`/api/tasks?id=${taskId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
